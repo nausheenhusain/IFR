@@ -18,9 +18,9 @@
 		        });
 		    }, 
 		    function() {
-		        $('#right').animate({ left: 0 }, 'fast', function() {
-		            $('#menu').fadeTo( "fast", 0 );
-					$('#button').html('Menu');
+				$('#menu').fadeTo( "fast", 0 );
+				$('#right').animate({ left: 0 }, 'fast', function() {
+		        $('#button').html('Menu');
 		        });
 		    }
 		);
@@ -42,7 +42,7 @@
 	    color: 					#0193B7;
 	    padding: 				10px;
 		text-align:				center;
-		font:					Impact;
+		font:					serif;
 		font-size:				40px;
 		font-style:				bold;
 		position:				relative;
@@ -133,6 +133,7 @@
 		font-size:				12px;
 		font-color:				#735D41;
 		padding:				10px;
+		position:				relative;
 	}
 	
 	</style>
@@ -145,21 +146,35 @@
 	<div class="navigation">
 		<div id="menu">
 		        <ul>
-		            <li><a href="Pages/Terms.html">Terms</a></li>
-		            <li><a href="Pages/Data.html">Data</a></li>
+		            
+					<li><a href="Pages/index.html">Home</a></li>
+					<li><a href="Pages/Data.html">Data</a></li>
 		            <li><a href="Pages/Comics.html">Comics</a></li>
+					<li></li>
+					<li><a href="Pages/Islamophobia.html">Islamophobia</a></li>
+					<li><a href="Pages/Jihad.html">Jihad</a></li>
+					<li><a href="Pages/Shari'a.html">Shari'a</a></li>
+					<li><a href="Pages/Shi'a and Sunni.html">Shi'a and Sunni</a></li>
+					<li><a href="Pages/Qur'an.html">Qur'an</a></li>
+					<li><a href="Pages/Masjid.html">Masjid</a></li>
+					<li><a href="Pages/Allah.html">Allah</a></li>
+					<li><a href="Pages/Hijab.html">Hijab</a></li>
+					<li><a href="Pages/Imam.html">Imam</a></li>
+					<li><a href="Pages/Islamism.html">Islamism</a></li>
+					<li><a href="Pages/Islamofascism.html">Islamofascism</a></li>
 		        </ul>
 		</div>
 	
 		<div id="right">
 		   <div id="menubar">
-				<p class="tagline">JIHAD DOESN'T MEAN "HOLY WAR."<br>SHARI'A DOESN'T MEAN "ISLAMIC LAW."</p>
+				<p class="tagline">JIHAD DOESN'T MEAN "HOLY WAR."</p>
 		       <div id="button">
 		            Menu
 		       </div>
 		   </div>
 		</div>
 	</div>
+	
 
 
 <!--page content-->
