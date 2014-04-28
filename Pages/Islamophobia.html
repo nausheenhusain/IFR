@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IFR Islamophobia</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="/Users/nhusain14/Desktop/IFR/Pages/CardFlip/flippant.js/flippant.js" type="text/javascript"></script>
+    <link href="/Users/nhusain14/Desktop/IFR/Pages/CardFlip/flippant.js/flippant.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	
+	jQuery(document).ready(function($) {
+
+		$('#button').toggle( 
+		    function() {
+		        $('#right').animate({ left: 150 }, 'fast', function() {
+		            $('#menu').fadeTo( "slow", 1 );
+					$('#button').html('Close');
+		        });
+		    }, 
+		    function() {
+				$('#menu').fadeTo( "fast", 0 );
+				$('#right').animate({ left: 0 }, 'fast', function() {
+		        	$('#button').html('Menu');
+		        });
+		    });
+
+		
+		var front = $('.flipthis');
+		
+		
+		$('.flipCard').on('click', function(){
+			var back = flippant.flip($(this).parent('.flipthis')[0], $(this).parent('.flipthis').data('back_content'));
+			$("." + $(this).parent('.flipthis').data('backbutton_name')).data('back', back);
+			
+			$("." + $(this).parent('.flipthis').data('backbutton_name')).on('click', function(){
+					$(this).data('back').close();
+			})
+		});
+		
+		
+		$(document).scroll(function(){  
+		    $('.navigation').fadeOut();
+
+		    var scrollA = $('body').scrollTop();
+	
+			setTimeout(function(){
+			        if(scrollA == $('body').scrollTop()){
+			            $('.navigation').fadeIn();
+			        }
+			    }, 1800);
+		})
+		
+	});
+	
+</script>
+	
+<style type="text/css">
+
+	* {
+	    padding: 				0px;
+	    margin: 				0px;
+	}
+
+	#menubar {
+	    width:					200px;
+		height:					142px;
+	    background-color:		#735D41;
+	    color: 					#0193B7;
+	    padding: 				10px;
+		text-align:				center;
+		font:					serif;
+		font-size:				40px;
+		font-style:				bold;
+		position:				relative;
+	}
+
+	#button {
+	    cursor:					pointer;
+	}
+
+	#menu, #right {
+	    display:				inline;
+	}
+
+	#menu li a {
+	    padding: 				10px;
+	    display: 				block;
+	    color: 					#0193B7;
+	    text-decoration: 		none;
+	}
+
+	#right {
+	    width:					10%;
+	    background-color: 		#fff;
+	    z-index: 				5;
+	    position: 				relative;
+	    left: 					0px;
+	    height: 				100%;
+	    -webkit-box-shadow:  	-5px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	        moz-box-shadow:  	-5px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	          o-box-shadow:  	-5px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	            box-shadow:  	-5px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	#right p {
+		padding: 				20px;
+		color:					#735D41;
+	}
+
+	#menu {
+	    float:					left;
+	    width: 					150px;
+	    height: 				100%;
+		position:				absolute;
+		opacity:				0;
+		clear:					both;
+	}
+
+	#menu li {
+	    background-color:		#735D41;
+	    border-bottom: 			2px solid #0193B7;
+	}
+	
+	.navigation {
+		position:				fixed;
+	}
+	
+	.well {
+		background-color:		#D1C5B7;
+		width:					80%;
+	}
+	
+	.pagetitle {
+		font-family:			serif;
+		font-style:				bold;
+		font-size:				60px;
+		font-weight:			50px;
+		text-align:				right;
+		font-color: 			#735D41;
+		padding:				30px;
+		background-color:		#D1C5B7;
+	}
+	
+	.definitiontext {
+		-webkit-box-shadow: 	0px 0px 10px  #ddd;
+	    box-shadow: 			0px 0px 10px  #ddd;
+		background-color: 		white;
+		font-family: 			sans-serif;
+		font-style:				normal;
+		font-size: 				15px;
+		font-weight: 			5px;
+		font-color: 			#735D41;
+		text-align: 			center;
+		padding:				10px;
+	}
+	
+	.flipthis {
+		width: 					400px; 
+		height: 				300px; 
+		border: 				2px solid #735D41; 
+		padding: 				10px; 
+		position: 				relative; 
+	}
+	
+	.flipCard {
+		background-color:		#735D41;
+		text-align:				center;
+		font:					sans-serif;
+		font-size:				12px;
+		font-color:				#0193B7;
+		width:					60px;
+		height:					40px;
+	}
+
+	#byline {
+		text-align:				left;
+		font:					serif;
+		font-style:				bold;
+		font-size:				12px;
+		font-color:				#735D41;
+		padding:				10px;
+		position:				relative;
+		float:					right;
+		border:					1px solid #735D41;
+	}
+	
+	</style>
+
+</head>
+
+
+<body>
+
+<!--navigation-->
+	<div class="navigation">
+		<div id="menu">
+		        <ul>
+		            
+					<li><a href="Pages/index.html">Home</a></li>
+					<li><a href="Pages/Data.html">Data</a></li>
+		            <li><a href="Pages/Comics.html">Comics</a></li>
+					<li></li>
+					<li><a href="Pages/Allah.html">Allah</a></li>
+					<li><a href="Pages/Hijab.html">Hijab</a></li>
+					<li><a href="Pages/Imam.html">Imam</a></li>
+					<li><a href="Pages/Islamism.html">Islamism</a></li>
+					<li><a href="Pages/Islamofascism.html">Islamofascism</a></li>
+					<li><a href="Pages/Islamophobia.html">Islamophobia</a></li>
+					<li><a href="Pages/Jihad.html">Jihad</a></li>
+					<li><a href="Pages/Masjid.html">Masjid</a></li>
+					<li><a href="Pages/Qur'an.html">Qur'an</a></li>
+					<li><a href="Pages/Shari'a.html">Shari'a</a></li>
+					<li><a href="Pages/Shi'aSunni.html">Shi'i/Sunni</a></li>
+		        </ul>
+		</div>
+	
+		
+		<div id="right">
+		   <div id="menubar">
+		       <div id="button">
+		            Menu
+		       </div>
+		   </div>
+		</div>
+	</div>
+
+
+<!--page content-->
+<div class="content">
+
+<div class="pagetitle">Islamophobia</div>
+
+		<br>
+
+<!--Islamophobia text-->
+<div class="islamophobiatext" align="center">
+					<div class="well well-md">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2">
+								<p class="definitiontext">Though the word itself literally means an irrational fear or distrust of Islam and Muslims, similar to other phobias, Islamophobia is the idea that Islam is inherently incompatible with Western ideals. </p>
+							</div>
+						</div>
+					</div><!--end well-->
+</div><!--end Islamophobia text-->
+
+
+
+<div class="islamophobiavids" align="center" position="relative" padding="10px">
+
+						<div class="flipthis" 
+						style="width: 600px; height: 400px; border: 2px solid #735D41; padding: 5px; position: relative; align: right"
+						class="flippant-modal-light"
+						data-back_content="<h2>This is what the scholar is saying.</h2><button class='closeCard1'>&laquo; Back</button>"
+						data-backbutton_name="closeCard1">
+
+					<!--card content-->
+
+							<video width="520" height="340" controls>
+								<source src="Assets/Asani/Asani_Islamophobia.mp4" type="video/mp4">
+								<source src="Assets/Asani/Asani_Islamophobia.ogg" type="video/ogg">
+								<object data="Assets/Asani/Asani_Islamophobia.mp4" width="320" height="240">
+									<embed src="Assets/Asani/Asani_Islamophobia.swf" width="320" height="240">
+								</object> 
+							</video>
+							
+							<br>
+
+							<button class="flipCard">Get the text! &raquo;</a></button>
+							<br>
+						</div>
+						
+						
+						
+						<div class="flipthis" 
+						style="width: 600px; height: 400px; border: 2px solid #735D41; padding: 5px; position: relative; align: right"
+						class="flippant-modal-light"
+						data-back_content="<h2>This is what the scholar is saying.</h2><button class='closeCard2'>&laquo; Back</button>"
+						data-backbutton_name="closeCard2">
+
+					<!--card content-->
+
+							<video width="520" height="340" controls>
+								<source src="Assets/Clifton/Clifton_Islamophobia.mp4" type="video/mp4">
+								<source src="Assets/Clifton/Clifton_Islamophobia.ogg" type="video/ogg">
+								<object data="Assets/Clifton/Clifton_Islamophobia.mp4" width="320" height="240">
+									<embed src="Assets/Clifton/Clifton_Islamophobia.swf" width="320" height="240">
+								</object> 
+							</video>
+							
+							<br>
+
+							<button class="flipCard">Get the text! &raquo;</a></br>
+						</div>
+
+
+						<div class="flipthis" 
+						style="width: 600px; height: 400px; border: 2px solid #735D41; padding: 5px; position: relative; align: right"
+						class="flippant-modal-light"
+						data-back_content="<h2>This is what the scholar is saying.</h2><button class='closeCard3'>&laquo; Back</button>"
+						data-backbutton_name="closeCard3">
+
+					<!--card content-->
+
+							<video width="520" height="340" controls>
+								<source src="Assets/Duss/Duss_Islamophobia.mp4" type="video/mp4">
+								<source src="Assets/Duss/Duss_Islamophobia.ogg" type="video/ogg">
+								<object data="Assets/Duss/Duss_Islamophobia.mp4" width="320" height="240">
+									<embed src="Assets/Duss/Duss_Islamophobia.swf" width="320" height="240">
+								</object> 
+							</video>
+							
+							<br>
+
+							<button class="flipCard">Get the text! &raquo;</a></br>
+						</div>
+
+
+			</div><!--end islamophobiavids-->
+
+	</div><!--end allislamophobia-->		
+
+
+			</div>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+	
+	<p id="byline">NAUSHEEN HUSAIN  |  UC BERKELEY GRADUATE SCHOOL OF JOURNALISM</p>
+
+</body>
+</html>
